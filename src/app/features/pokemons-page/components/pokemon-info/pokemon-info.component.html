@@ -1,0 +1,33 @@
+<mat-card class="pokemon-card">
+  <img mat-card-image src="{{pokemonInfo.sprites.front_default}}" alt="photo">
+  <mat-card-title class="pokemon-card-title">{{pokemonInfo.name | titlecase}}</mat-card-title>
+  <mat-card-subtitle>
+    <table class="pokemon-card-table">
+      <tr>
+        <td>Type</td>
+        <td>
+          <ng-container *ngFor="let types of pokemonInfo.types">
+            {{types.type.name | titlecase }}
+          </ng-container>
+        </td>
+      </tr>
+      <tr>
+        <td>Experience</td>
+        <td>{{pokemonInfo.base_experience}}</td>
+      </tr>
+      <tr>
+        <td>Moves</td>
+        <td>{{pokemonInfo.moves.length}}</td>
+      </tr>
+      <tr>
+        <td>Height</td>
+        <td>{{pokemonInfo.height}}</td>
+      </tr>
+      <tr>
+        <td>Weight</td>
+        <td>{{pokemonInfo.weight}}</td>
+      </tr>
+    </table>
+  </mat-card-subtitle>
+</mat-card>
+

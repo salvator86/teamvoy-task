@@ -1,0 +1,9 @@
+<mat-card class="pokemon-page__pokemon-list__button" (click)="onChoosePokemon.emit(pokemon)">
+  <mat-card-content>
+    <img mat-card-image class="pokemon-list__pokemon-img" [src]='pokemon.sprites.front_default'>
+    <mat-card-title class="pokemon-list__pokemon-title">{{pokemon.name | titlecase}}</mat-card-title>
+    <mat-card-subtitle class="pokemon-page__pokemon_types">
+      <p *ngFor="let types of pokemon.types">{{types.type.name | titlecase }}</p>
+    </mat-card-subtitle>
+  </mat-card-content>
+</mat-card>

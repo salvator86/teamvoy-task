@@ -1,0 +1,34 @@
+.pokemon-card {
+  width: 30%;
+  margin: 0 auto;
+  position: sticky;
+  top: 30px;
+}
+
+.pokemon-card-title {
+  text-align: center;
+}
+
+.pokemon-card-table {
+  width: 100%;
+}
+
+table, tr, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+@media (max-width: 1080px) {
+  .pokemon-card {
+    width: 60%;
+    top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pokemon-card {
+    width: 80%;
+    top: 15px;
+  }
+}

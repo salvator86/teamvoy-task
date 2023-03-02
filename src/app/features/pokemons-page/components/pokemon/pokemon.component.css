@@ -1,0 +1,18 @@
+.pokemon-page__pokemon-list__button {
+  cursor: pointer;
+}
+
+.pokemon-list__pokemon-img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.pokemon-list__pokemon-title {
+  text-align: center;
+}
+
+.pokemon-page__pokemon_types {
+  display: flex;
+  justify-content: space-around;
+}

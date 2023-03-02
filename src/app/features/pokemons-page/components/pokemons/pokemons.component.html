@@ -1,0 +1,34 @@
+<div class="pokemon-page">
+  <h1 class="pokemon-page_title">Pokedex</h1>
+  <select (change)="onChangeSelect(selectType)" #selectType class="pokemon-page_filter">
+    <option *ngFor="let option of options" [value]="option">{{option}}</option>
+  </select>
+  <div class="pokemon-page_flex">
+    <div class="pokemon-page__pokemon-side">
+      <div class="pokemon-page__pokemon-list" *ngIf="!filter">
+        <div *ngFor="let pokemon of pokemon">
+          <app-pokemon [pokemon]="pokemon" (onChoosePokemon)="onChoosePokemon($event)"></app-pokemon>
+        </div>
+      </div>
+      <div class="pokemon-page__pokemon-list" *ngIf="filter">
+        <div *ngFor="let pokemon of pokemonByFilter">
+          <app-pokemon [pokemon]="pokemon" (onChoosePokemon)="onChoosePokemon($event)"></app-pokemon>
+        </div>
+      </div>
+      <button
+        mat-raised-button
+        color="primary"
+        class="pokemon-page__pokemon-load-more"
+        (click)="onLoadPokemon()"
+        *ngIf="canLoad">Load More</button>
+    </div>
+    <div class="pokemon-page__info">
+      <ng-container *ngIf="pokemonInfo">
+        <app-pokemon-info
+          [pokemonInfo]="pokemonInfo"
+        >
+        </app-pokemon-info>
+      </ng-container>
+    </div>
+  </div>
+</div>
